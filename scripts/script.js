@@ -6,6 +6,7 @@ const urlInput = document.getElementById('url-input')
 // DOMContentLoaded event listener
 document.addEventListener('DOMContentLoaded', function () {
     urlInput.style.display = 'none';
+    fileTypeFromDropDown.value = "local";
 });
 
 

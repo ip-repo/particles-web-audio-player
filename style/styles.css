@@ -3,6 +3,7 @@ body {
     margin: 0;
     font-family: 'Courier New', Courier, monospace;
 }
+
 /* file container rule */
 .file-container {
     position: fixed;
@@ -10,8 +11,20 @@ body {
     left: 0;
     width: 100%;
     background-color: rgba(248, 86, 86, 0.5);
-   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    font-size: large;
+
 }
+/* url-input rule*/
+.file-container #url-input {
+    width: 15%;
+}
+
+
+
 /* player-container rule */
 .player-container {
     position: fixed;
@@ -28,7 +41,7 @@ body {
 .audio-player {
     width: 80%;
     padding: 10px;
-    background: rgba(248, 86, 86, 0.5);   
+    /*background: rgba(248, 86, 86, 0.5); */  
 }
 
 
