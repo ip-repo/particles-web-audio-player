@@ -4,8 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Audio Player</title>
+    <link rel="stylesheet" href="./style/styles.css">
 </head>
 <body>
+    <!--File container holds the functionality to load music files-->
+    <div class="file-container">
+        <!--Drop down to choose if to use a local or from url file-->
+        <select id="file-type">
+            <option value="local">Local File</option>
+            <option value="url">URL</option>
+        </select>
+        <!--Upload input-->
+        <input type="file" id="file-upload" accept=".mp3, .wav">
+        <!--URL input-->
+        <input type="text" id="url-input" placeholder="Enter URL">
+        <!--Load button-->
+        <button id="load-button">Load</button>
+    </div>
+    <!--Audio player container-->
+    <div class="player-container">
+        <audio controls class="audio-player">
+
+        </audio>
+    </div>
     
 </body>
 </html>
