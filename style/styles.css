@@ -43,6 +43,13 @@ body {
     padding: 10px;
     /*background: rgba(248, 86, 86, 0.5); */  
 }
-
+video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
 
 
