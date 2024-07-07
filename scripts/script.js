@@ -39,6 +39,7 @@ fileTypeFromDropDown.addEventListener('change', function(){
     }
 });
 
+// Event listener for url box inputs
 urlInput.addEventListener('input', function (){
     const url = urlInput.value.trim();
     var validateUrl = isValidUrl(url);
@@ -51,6 +52,15 @@ urlInput.addEventListener('input', function (){
     }
 });
 
+fileUploadInput.addEventListener('change', function (){
+    // If a file is chosed then activate load button
+    loadButton.disabled = !fileUploadInput.files[0];
+    if (loadButton.disabled === false) {
+        console.log("File Loaded\n",fileUploadInput.files[0]);
+    }else {
+        console.log("File loading aborted")
+    }
+});
 
 
 
