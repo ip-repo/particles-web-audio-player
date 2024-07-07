@@ -1,17 +1,31 @@
 // Get references to the input elements
-const fileTypeFromDropDown = document.getElementById('file-type')
-const fileUploadInput = document.getElementById('file-upload')
-const urlInput = document.getElementById('url-input')
-const loadButton = document.getElementById('load-button')
-const audioPlayer = document.querySelector('.audio-player')
+const fileContainer = document.querySelector('.file-container');
+const audioPlayerContainer = document.querySelector('.player-container');
+const fileTypeFromDropDown = document.getElementById('file-type');
+const fileUploadInput = document.getElementById('file-upload');
+const urlInput = document.getElementById('url-input');
+const loadButton = document.getElementById('load-button');
+const audioPlayer = document.querySelector('.audio-player');
+const videoPlayer = document.getElementById("video-player");
+
+// Before refreshing the page
+window.addEventListener('beforeunload', function() {
+    // Clean file upload input
+    fileUploadInput.value = '';
+    // Clean url input
+    urlInput.value = '';
+});
 
 // DOMContentLoaded event listener
 document.addEventListener('DOMContentLoaded', function () {
+    // Hide url-input
     urlInput.style.display = 'none';
+    // Set dropdown selected to local file upload
     fileTypeFromDropDown.value = "local";
+    // Disable load button
     loadButton.disabled = true;
-
 });
+
 
 
 // Event listener for dropdown changes
@@ -37,20 +51,22 @@ fileTypeFromDropDown.addEventListener('change', function(){
         urlInput.style.display = 'block';
         // Disable load button
         loadButton.disabled = true;
-
     }
 });
 
 // Event listener for url box inputs
 urlInput.addEventListener('input', function (){
+    // Trim input to distch spaces
     const url = urlInput.value.trim();
+    // Check if url is valid
     var validateUrl = isValidUrl(url);
+    // Set load button validity 
     loadButton.disabled = !validateUrl;
     if (validateUrl === true) {
         console.log("Load button active");
-
-    }else {
+    } else {
         console.log("Load button not active");
+        
     }
 });
 // Event listener for file upload input
@@ -59,7 +75,7 @@ fileUploadInput.addEventListener('change', function (){
     loadButton.disabled = !fileUploadInput.files[0];
     if (loadButton.disabled === false) {
         console.log("File Loaded\n",fileUploadInput.files[0]);
-    }else {
+    } else {
         console.log("File loading aborted")
     }
 });
@@ -98,6 +114,7 @@ loadButton.addEventListener('click', function () {
             audioSource = url;
             // Load audio source to player
             audioPlayer.src = audioSource;
+            
         } else {
             // The file was loaded and load button clicked but something went wrong
             alert("something went wrong.")
@@ -106,10 +123,26 @@ loadButton.addEventListener('click', function () {
             // clear url input
             urlInput.value ='';
             // Disable load button
-            loadButton.disabled = true;
+            loadButton.disabled = true;     
         }
     }
+});
 
+// Event listener audio player play start
+audioPlayer.addEventListener('play', function (){
+    // Set video player to infinite loops
+    videoPlayer.loop = true;
+    // Play video player
+    videoPlayer.play();
+});
+
+// Event listener for audio file reached the end
+audioPlayer.addEventListener('ended', function (){
+    // Set video player to stop loop
+    videoPlayer.loop = false;
+    // Pause video player
+    videoPlayer.pause();
+    
 });
 
 

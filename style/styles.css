@@ -10,19 +10,26 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(248, 86, 86, 0.5);
+    height: 7%;
+    background-color: rgba(255, 255, 255, 0.1);
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 2px;
     font-size: large;
-
+    color:rgb(242, 255, 240);   
 }
+
+/* on hover of file upload input */
+.file-container #file-upload:hover{
+    background-color: rgb(255, 255, 255);
+    color:black;
+}
+
 /* url-input rule*/
 .file-container #url-input {
     width: 15%;
 }
-
 
 
 /* player-container rule */
@@ -31,18 +38,21 @@ body {
     bottom:  0;
     left: 0;
     width: 100%;
-    background-color: rgba(248, 86, 86, 0.5);
+    height: 10%;
+    background-color: rgba(255, 255, 255, 0.1);
     display: flex;
     justify-content: center; /* horizontally */
-    align-items: center; /* vertically */
-
+    align-items: center; /* vertically */   
 }
+
 /* audio-player rule */
 .audio-player {
     width: 80%;
-    padding: 10px;
-    /*background: rgba(248, 86, 86, 0.5); */  
+    padding: 20px;
+    height: 90%;   
 }
+
+/* video-player rule */
 video {
     width: 100vw;
     height: 100vh;
