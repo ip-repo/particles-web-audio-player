@@ -18,11 +18,23 @@ fileTypeFromDropDown.addEventListener('change', function(){
     console.log("New selection: ", selectedOption)
     // Show/hide input fields based on the selected option
     if (selectedOption === 'local'){
+        // Clear url input
+        urlInput.value = '';
+        // Show upload button
         fileUploadInput.style.display ='block';
+        // Hide url
         urlInput.style.display = 'none';
+        // Disable load button
+        loadButton.disabled = true
     } else if (selectedOption === 'url') {
+        // Clear file upload button
+        fileUploadInput.value = ''
+        // hide file upload button
         fileUploadInput.style.display ='none';
+        // Show url input 
         urlInput.style.display = 'block';
+        // Disable load button
+        loadButton.disabled = true
 
     }
 });
