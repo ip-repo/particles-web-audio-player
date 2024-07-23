@@ -1,4 +1,6 @@
 # Audio player webpage
 
-![audioplayer](https://github.com/user-attachments/assets/3396ec29-c2e6-4472-a431-273631cd4139)
+![audioplayer](https://github.com/user-attachments/assets/3c04620e-aed0-46a3-b2f7-d025ee91a0f8)
+
+
 
